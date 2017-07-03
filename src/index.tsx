@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 // import AppConnected from './containers/App';
 import { Provider } from 'react-redux';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import { store, history } from './store/store';
 
 import { ConnectedRouter, } from 'react-router-redux';
@@ -21,6 +22,7 @@ injectTapEventPlugin();
 // let App:any = AppConnected;
 import StarWarsPage from './components/StarWarsPage';
 import MaterialPage from './components/MaterialPage';
+import BootstrapPage from './components/BootstrapPage';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -28,6 +30,7 @@ ReactDOM.render(
       <div>
         <Route exact={true} path="/" component={StarWarsPage} />
         <Route path="/material" component={MaterialPage} />
+        <Route path="/bootstrap" component={BootstrapPage} />
       </div>
     </ConnectedRouter>
   </Provider>,
