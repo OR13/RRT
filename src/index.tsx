@@ -13,12 +13,14 @@ import { Route } from 'react-router';
 
 // let App:any = AppConnected;
 import StarWarsPage from './components/StarWarsPage';
+import MaterialPage from './components/MaterialPage';
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <Route path="/" component={StarWarsPage}/>
+        <Route exact={true} path="/" component={StarWarsPage}/>
+        <Route path="/material" component={MaterialPage}/>
       </div>
     </ConnectedRouter>
   </Provider>,
