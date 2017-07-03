@@ -3,11 +3,23 @@ import * as ReactDOM from 'react-dom';
 import AppConnected from './containers/App';
 import {Provider} from 'react-redux';
 import './index.css';
-import {store} from './store/store';
+import {store, history} from './store/store';
+
+import { ConnectedRouter,  } from 'react-router-redux';
+import { Route } from 'react-router';
+
+// Now you can dispatch navigation actions from anywhere!
+// store.dispatch(push('/foo'))
+
+let App:any = AppConnected;
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppConnected />
+    <ConnectedRouter history={history}>
+      <div>
+        <Route path="/" component={App}/>
+      </div>
+    </ConnectedRouter>
   </Provider>,
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root')
 );

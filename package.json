@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-router": "^4.0.12",
+    "@types/react-router-redux": "^5.0.3",
     "classnames": "^2.2.5",
+    "history": "^4.6.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
+    "react-router-redux": "^5.0.0-alpha.6",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0"
   },
@@ -18,6 +22,7 @@
     "@types/react": "^15.0.33",
     "@types/react-dom": "^15.5.1",
     "@types/react-redux": "^4.4.45",
+    "@types/history": "^4.6.0",
     "enzyme": "^2.9.1",
     "react-scripts-ts": "2.3.2",
     "react-test-renderer": "^15.6.1",
