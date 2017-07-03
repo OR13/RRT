@@ -1,0 +1,32 @@
+{
+  "name": "react-redux-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.0",
+    "@types/enzyme": "^2.8.1",
+    "@types/jest": "^20.0.2",
+    "@types/node": "^8.0.6",
+    "@types/react": "^15.0.33",
+    "@types/react-dom": "^15.5.1",
+    "@types/react-redux": "^4.4.45",
+    "enzyme": "^2.9.1",
+    "react-scripts-ts": "2.3.2",
+    "react-test-renderer": "^15.6.1",
+    "redux-devtools-extension": "^2.13.2"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  }
+}
