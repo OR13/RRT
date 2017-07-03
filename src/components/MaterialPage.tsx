@@ -1,12 +1,5 @@
 import * as React from 'react';
 
-// import RaisedButton from 'material-ui/RaisedButton';
-
-// import getMuiTheme from 'material-ui/styles/getMuiTheme';
-// import {MuiThemeProvider, lightBaseTheme} from 'material-ui/styles';
-
-// const lightMuiTheme = getMuiTheme(lightBaseTheme);
-
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { MuiThemeProvider, lightBaseTheme } from 'material-ui/styles';
 
