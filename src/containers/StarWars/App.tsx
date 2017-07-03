@@ -3,18 +3,18 @@ import * as React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect, Dispatch} from 'react-redux';
 
-import {Characters} from '../components/Characters';
-import {CharacterDetails} from '../components/CharacterDetails';
-import {Search} from '../components/Search';
+import {Characters} from '../../components/Characters';
+import {CharacterDetails} from '../../components/CharacterDetails';
+import {Search} from '../../components/Search';
 
 // Actions
-import {loadAllCharacters, searchCharacters} from '../actions/characters';
-import {loginAsUser} from '../actions/users';
-import {setCharacterDetails} from '../actions/characterDetails';
-import {submitComment} from '../actions/comments';
-import {setRating} from '../actions/ratings';
+import {loadAllCharacters, searchCharacters} from '../../actions/characters';
+import {loginAsUser} from '../../actions/users';
+import {setCharacterDetails} from '../../actions/characterDetails';
+import {submitComment} from '../../actions/comments';
+import {setRating} from '../../actions/ratings';
 
-import {StoreState, CharacterState, UserState} from '../types/index';
+import {StoreState, CharacterState, UserState} from '../../types/index';
 
 interface Props extends StoreState {
   dispatch: Dispatch<any>;
