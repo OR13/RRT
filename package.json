@@ -42,6 +42,7 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "review-pr": "node tools/review_pr.js"
   }
 }
