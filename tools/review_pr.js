@@ -8,16 +8,14 @@ if (process.argv.length !== 3) {
 
 const pr_id = process.argv[2]
 
-
-const required_commands = {
+const commands = {
     'Get PR branch': `git fetch origin pull/${pr_id}/head:pr-${pr_id}`,
     'Checkout PR': `git checkout pr-${pr_id}`,
+    'Run Unit Tests': "npm run test:no-report"
 }
-const commands = {
-    'Run Unit Tests': "npm run test",
-    'Run Integration Tests': "npm run int-test",
-    // 'Run Linter': "ruby ./tools/tslint_changed.rb pr-${pr_id} #{branch_compare}"
-}
+
+let resultKeys = Object.keys(commands);
+let results = []
 
 
 const start = () => {
@@ -35,28 +33,37 @@ const run_command = (cmd) => {
         const ls = spawn(splitCmd[0], splitCmd.splice(1));
 
         ls.stdout.on('data', (data) => {
-            console.log(`stdout: ${data}`);
+            console.log(`${data}`);
         });
 
         ls.stderr.on('data', (data) => {
-            console.log(`stderr: ${data}`);
+            console.log(`${data}`);
         });
 
         ls.on('close', (code) => {
-            console.log(`child process exited with code ${code}`);
+            // console.log(`child process exited with code ${code}`);
+            results.push(code === 0);
             resolve(code);
         });
     });
 }
 
+const run_all = (cmds) => {
+    let promises = [];
+    resultKeys.forEach((key) => {
+        promises.push(run_command(cmds[key]))
+    })
+    return Promise.all(promises)
+}
 
 start()
     .then(() => {
-        return run_command(required_commands['Get PR branch'])
+        return run_all(commands)
     })
     .then(() => {
-        return run_command(required_commands['Checkout PR'])
-    })
-    .then((data) => {
         console.log('👾  Done.')
+        resultKeys.forEach( (k, i) => {
+            console.log(results[i] ? '💚' : '💔', '\t', k)
+        });
+        console.log('\n');
     })
